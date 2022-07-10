@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,4 +47,67 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+:root {
+  font-family: "Montserrat", sans-serif;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.todo__title {
+  font-size: 100px;
+  color: rgb(147, 147, 147);
+  text-shadow: 5px 5px 0px #f1b361;
+}
+
+.todo-list {
+  min-width: 400px;
+  max-width: 700px;
+  min-height: 450px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.todo-list__title {
+  font-size: 25px;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.todo-list__selections {
+  text-align: center;
+}
+
+.todo-list__select {
+  width: 40%;
+  display: inline-block;
+  padding: 15px 10px;
+  font-size: 15px;
+  background-color: #f1b361;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.todo-list__select--active {
+  background-color: #ed8e12;
+}
+
+.todo-list__button-add {
+  background-color: rgba(45, 215, 3, 0.8352941176);
+  color: #fff;
+  border: 0;
+  position: absolute;
+  right: 15px;
+  bottom: 30px;
+  padding: 14px 22px;
+  border-radius: 50%;
+  font-size: 25px;
+  cursor: pointer;
 }
