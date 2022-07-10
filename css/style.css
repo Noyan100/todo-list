@@ -81,12 +81,14 @@ table {
 }
 
 .todo-list__selections {
-  text-align: center;
+  display: flex;
+  position: relative;
+  justify-content: space-around;
 }
 
 .todo-list__select {
+  text-align: center;
   width: 40%;
-  display: inline-block;
   padding: 15px 10px;
   font-size: 15px;
   background-color: #f1b361;
@@ -97,6 +99,18 @@ table {
 
 .todo-list__select--active {
   background-color: #ed8e12;
+  z-index: 2;
+}
+
+.todo-list__select--indicator {
+  background-color: #ed8e12;
+  position: absolute;
+  width: calc(40% + 20px);
+  height: 45px;
+  z-index: 1;
+  top: 0;
+  left: 10px;
+  transition: 0.1s;
 }
 
 .todo-list__button-add {
