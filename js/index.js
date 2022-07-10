@@ -1,10 +1,7 @@
-let buttonSelections = Array.from(document.querySelectorAll('.todo-list__select'));
-const indicator = document.querySelector('.todo-list__select--indicator')
+let buttonSelections = Array.from(document.querySelectorAll('.todo-container__select'));
+const indicator = document.querySelector('.todo-container__select--indicator')
 
 let buttonActive = buttonSelections[0];
-
-
-buttonActive.classList.add('todo-list__select--active')
 
 buttonSelections.forEach(element => {
     element.addEventListener('click', setButtonActive)
@@ -13,11 +10,7 @@ buttonSelections.forEach(element => {
 function setButtonActive(e) {
     e.preventDefault();
     if(buttonActive === e.target) return;
-    buttonActive.classList.remove('todo-list__select--active')
     buttonActive = e.target;
-    setTimeout(() => {
-        buttonActive.classList.add('todo-list__select--active')
-    }, 100)
     setIndicator(e)
 }
 

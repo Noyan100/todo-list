@@ -66,7 +66,7 @@ table {
   text-shadow: 5px 5px 0px #f1b361;
 }
 
-.todo-list {
+.todo-container {
   min-width: 400px;
   max-width: 700px;
   min-height: 450px;
@@ -74,47 +74,43 @@ table {
   position: relative;
 }
 
-.todo-list__title {
+.todo-container__title {
   font-size: 25px;
   text-align: center;
   margin: 20px 0 10px;
 }
 
-.todo-list__selections {
+.todo-container__selections {
   display: flex;
   position: relative;
   justify-content: space-around;
+  margin-bottom: 12px;
 }
 
-.todo-list__select {
+.todo-container__select {
   text-align: center;
   width: 40%;
   padding: 15px 10px;
   font-size: 15px;
-  background-color: #f1b361;
-  color: #fff;
+  color: #716864;
   border: 0;
   cursor: pointer;
-}
-
-.todo-list__select--active {
-  background-color: #ed8e12;
   z-index: 2;
 }
 
-.todo-list__select--indicator {
-  background-color: #ed8e12;
+.todo-container__select--indicator {
+  background-color: rgba(237, 142, 18, 0.6745098039);
   position: absolute;
   width: calc(40% + 20px);
   height: 45px;
   z-index: 1;
   top: 0;
   left: 10px;
-  transition: 0.1s;
+  transition: 0.3s ease-in-out;
 }
 
-.todo-list__button-add {
-  background-color: rgba(45, 215, 3, 0.8352941176);
+.todo-container__button-add {
+  background-color: rgba(237, 142, 18, 0.6745098039);
   color: #fff;
   border: 0;
   position: absolute;
@@ -124,4 +120,42 @@ table {
   border-radius: 50%;
   font-size: 25px;
   cursor: pointer;
+}
+
+.todo-list {
+  display: none;
+}
+
+.todo-list--active {
+  display: block;
+}
+
+.todo-list__list {
+  margin-left: 10px;
+}
+
+.todo-list__item {
+  position: relative;
+  font-size: 20px;
+  margin-left: 35px;
+}
+.todo-list__item:before {
+  content: "";
+  position: absolute;
+  left: -35px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #716864;
+}
+.todo-list__item:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(113, 104, 100, 0.6);
+  -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+          clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
 }
